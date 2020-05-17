@@ -1,17 +1,15 @@
-FROM golang:1.12-stretch
+FROM golang:1.13-stretch
 
 # Copy project into docker instance
-COPY . /app
-WORKDIR /app
+WORKDIR /go/src/app
+COPY . .
 
-# Get the go app
-RUN go get -u github.com/banool/codenames-pictures
-
-# Build backend
-RUN go build cmd/codenames/main.go
+# Build and install backend
+RUN go get -d -v ./...
+RUN go install -v ./...
 
 # Expose 9091 port
 EXPOSE 9091
 
-# Set entrypoint command
-CMD ./main 9091
+# Set run command
+CMD codenames 9091
