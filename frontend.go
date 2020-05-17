@@ -49,8 +49,8 @@ const tpl = `
 			#application { margin: 1em; }
 
 			#topbar {
-			  padding: 1em;
-			  margin-bottom: 1em;
+			  padding: 0.5em;
+			  margin-bottom: 0.5em;
 			}
 
 			#topbar a {
