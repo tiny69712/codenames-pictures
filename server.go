@@ -126,6 +126,9 @@ func (s *Server) getImagePaths(rw http.ResponseWriter, imagesLink string) ([]str
 			if !strings.Contains(line, "<a href=\"") {
 				continue
 			}
+			if strings.Contains(line, "..") {
+				continue
+			}
 			relativeLink := strings.Split(strings.Split(" "+line, "<a href=\"")[1], "\">")[0]
 			links = append(links, base+"/"+relativeLink)
 		}
