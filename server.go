@@ -169,6 +169,23 @@ func (s *Server) handleRetrieveGame(rw http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	// Now that we know the link is good, let's try to record the image link used.
+	f, err := os.OpenFile("successful_links.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer f.Close()
+	if _, err := f.WriteString(req.Form.Get("newGameImagesLink")); err != nil {
+		fmt.Println(err)
+	}
+	if err == nil {
+		fmt.Printf("Successfully wrote images link to file\n")
+	} else {
+		fmt.Println(err)
+	}
+
+	fmt.Printf("Making new game!\n")
+
 	g = newGame(gameID, imagePaths, randomState())
 	s.games[gameID] = g
 	writeGame(rw, g)

@@ -6,8 +6,7 @@ import (
 	"net/http"
 	"os"
 	"time"
-
-	"github.com/banool/codenames-pictures"
+	"github.com/banool/codenames"
 )
 
 const DEFAULT_PORT = "9001"
