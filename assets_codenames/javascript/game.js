@@ -250,7 +250,7 @@ window.Game = React.createClass({
                     <button onClick={(e) => this.nextGame(e)} id="next-game-btn">Next game</button>
                 </form>
                 <div id="coffee">
-                    If you enjoy this, please consider donating to the WHO. <a href="https://www.buymeacoffee.com/banool" target="_blank">I can even do it for you!</a>
+                    <a href="https://www.buymeacoffee.com/banool" target="_blank">Buy me a coffee :)</a>
                 </div>
             </div>
         );
