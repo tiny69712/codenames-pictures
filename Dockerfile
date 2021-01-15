@@ -1,4 +1,4 @@
-FROM golang:1.16-stretch
+FROM golang:1.15-buster
 
 # Copy project into docker instance
 WORKDIR /go/src/app

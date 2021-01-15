@@ -12,7 +12,15 @@ A hosted version of the app is available at [codenames.dport.me](https://codenam
 
 ![Spymaster view of board](https://raw.githubusercontent.com/banool/codenames-pictures/master/screenshot.png)
 
-## How to run this yourself
+## How to run this yourself (Docker)
+```
+docker build . -t codenames-pictures
+docker run -it -p 9091:9091 codenames-pictures
+```
+
+Then go to `127.0.0.1:9091`.
+
+## How to run this yourself (manually)
 Firstly, make sure you have go installed. There are good resources for this [on](https://ahmadawais.com/install-go-lang-on-macos-with-homebrew/) [the](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-18-04) [net](https://www.reddit.com/r/golang/comments/79nnq2/go_development_using_wsl_in_win_10/). 
 
 ### Just installing

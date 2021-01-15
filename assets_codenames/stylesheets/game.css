@@ -262,3 +262,10 @@
   color: #000;
   font-weight: bold;
 }
+
+br {
+  content: "";
+  margin: 1em;
+  display: block;
+  font-size: 24%;
+}
